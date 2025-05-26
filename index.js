@@ -34,7 +34,7 @@ app.post("/send", async (req, res) => {
   const { title, body } = req.body;
 
   try {
-    const tokensSnapshot = await admin.database().ref('admin_tokens').once('value');
+    const tokensSnapshot = await admin.database().ref('GenAi/admin_tokens').once('value');
     const tokensData = tokensSnapshot.val();
     
     if (!tokensData) {
