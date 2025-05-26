@@ -11,8 +11,8 @@ app.use(express.json());
 let serviceAccount;
 try {
   // Check if running on Render (production)
-  if (fs.existsSync('./firebase-admin-key.json')) {
-    serviceAccount = require('./firebase-admin-key.json');
+  if (fs.existsSync('/etc/secrets/firebase-admin-key.json')) {
+    serviceAccount = require('/etc/secrets/firebase-admin-key.json');
     console.log('Using Firebase credentials from /etc/secrets/');
   } else {
     // Local development
